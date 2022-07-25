@@ -1,17 +1,17 @@
 // EPISODE 1
 
-// const scenario = {
-//     murderer: 'Miss Scarlet',
-//     room: 'Library',
-//     weapon: 'Rope'
-// };
+const scenario = {
+    murderer: 'Miss Scarlet',
+    room: 'Library',
+    weapon: 'Rope'
+};
 
-// const declareMurderer = function() {
-//     return `The murderer is ${scenario.murderer}.`;
-// }
+const declareMurderer = function() {
+    return `The murderer is ${scenario.murderer}.`;
+}
 
-// const verdict = declareMurderer();
-// console.log(verdict);
+const verdict = declareMurderer();
+console.log(verdict);
 
 // OUTPUT - The murderer is Miss Scarlet.
 // I cannot see any reason the code would not work
@@ -20,19 +20,19 @@
 
 // EPISODE 2 
 
-// const murderer = 'Professor Plum';
+const murderer = 'Professor Plum';
 
-// const changeMurderer = function() {
-//     murderer = 'Mrs. Peacock';
-// }
+const changeMurderer = function() {
+    murderer = 'Mrs. Peacock';
+}
 
-// const declareMurderer = function() {
-//     return `The murderer is ${murderer}.`;
-// }
+const declareMurderer = function() {
+    return `The murderer is ${murderer}.`;
+}
 
-// changeMurderer();
-// const verdict = declareMurderer();
-// console.log(verdict);
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
 
 // OUTPUT - The murderer cannot be changed from Prof Plum to Mrs Peacock as the murderer variable is a constant. 
 // We should get an error that says the variable cannot be changed.
@@ -41,85 +41,101 @@
 
 // EPISODE 3
 
-// let murderer = 'Professor Plum';
+let murderer = 'Professor Plum';
 
-// const declareMurderer = function() {
-//   let murderer = 'Mrs. Peacock';
-//   return `The murderer is ${murderer}.`;
-// }
+const declareMurderer = function() {
+  let murderer = 'Mrs. Peacock';
+  return `The murderer is ${murderer}.`;
+}
 
-// const firstVerdict = declareMurderer();
-// console.log('First Verdict: ', firstVerdict);
+const firstVerdict = declareMurderer();
+console.log('First Verdict: ', firstVerdict);
 
-// const secondVerdict = `The murderer is ${murderer}.`;
-// console.log('Second Verdict: ', secondVerdict);
+const secondVerdict = `The murderer is ${murderer}.`;
+console.log('Second Verdict: ', secondVerdict);
 
 // First Verdict: The murder is Mrs. Peacock
 // Second Verdict: The murder is Professor Plum
 // First - the murder was changed by the variable within the function block
 // Second - the initial murderer variable stays as Prof Plum as the it is not effected by the declareMurder function
 
-// let suspectOne = 'Miss Scarlet';
-// let suspectTwo = 'Professor Plum';
-// let suspectThree = 'Mrs. Peacock';
+// //////////////////////////////////////
 
-// const declareAllSuspects = function() {
-//     let suspectThree = 'Colonel Mustard';
-//     return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
-// }
+// EPISODE 4
 
-// const suspects = declareAllSuspects();
-// console.log(suspects);
-// console.log(`Suspect three is ${suspectThree}.`);
+let suspectOne = 'Miss Scarlet';
+let suspectTwo = 'Professor Plum';
+let suspectThree = 'Mrs. Peacock';
+
+const declareAllSuspects = function() {
+    let suspectThree = 'Colonel Mustard';
+    return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
+}
+
+const suspects = declareAllSuspects();
+console.log(suspects);
+console.log(`Suspect three is ${suspectThree}.`);
 
 // OUTCOME 1 The suspects are Miss Scarlet, Professor Plum, Colonel Mustard.
 // because the declareAllSuspects function changes suspectThree
 // OUTCOME 2 Suspect three is Mrs Peacock. 
 // because The change of suspect 3 variable (to Colonel Mustard) is not actioned that variable only exists within that block of code.
 
-// const scenario = {
-//     murderer: 'Miss Scarlet',
-//     room: 'Kitchen',
-//     weapon: 'Candle Stick'
-// };
+// //////////////////////////////////////
 
-// const changeWeapon = function(newWeapon) {
-//     scenario.weapon = newWeapon;
-// }
+// EPISODE 5
 
-// const declareWeapon = function() {
-//     return `The weapon is the ${scenario.weapon}.`;
-// }
+const scenario = {
+    murderer: 'Miss Scarlet',
+    room: 'Kitchen',
+    weapon: 'Candle Stick'
+};
 
-// changeWeapon('Revolver');
-// const verdict = declareWeapon();
-// console.log(verdict);
+const changeWeapon = function(newWeapon) {
+    scenario.weapon = newWeapon;
+}
+
+const declareWeapon = function() {
+    return `The weapon is the ${scenario.weapon}.`;
+}
+
+changeWeapon('Revolver');
+const verdict = declareWeapon();
+console.log(verdict);
 
 // OUTCOME The weapon is the Revolver
 // because although the variable scenario cannot be changed the key value pairs within the object can be changed and therefore the weapon is changed to Revolver. 
 
-// let murderer = 'Colonel Mustard';
+// //////////////////////////////////////
 
-// const changeMurderer = function() {
-//     murderer = 'Mr. Green';
+// EPISODE 6
 
-//     const plotTwist = function() {
-//         murderer = 'Mrs. White';
-//     }
+let murderer = 'Colonel Mustard';
 
-//     plotTwist();
-//     }
+const changeMurderer = function() {
+    murderer = 'Mr. Green';
 
-// const declareMurderer = function () {
-//     return `The murderer is ${murderer}.`;
-// }
+    const plotTwist = function() {
+        murderer = 'Mrs. White';
+    }
 
-// changeMurderer();
-// const verdict = declareMurderer();
-// console.log(verdict);
+    plotTwist();
+    }
+
+const declareMurderer = function () {
+    return `The murderer is ${murderer}.`;
+}
+
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
 
 // OUTCOME The murderer is Mrs. White 
 // because the plotTwist is called within the changeMurder function so that changes the murderer to Mrs White from Mr Green
+
+// //////////////////////////////////////
+
+// EPISODE 7
 
 let murderer = 'Professor Plum';
 
@@ -146,3 +162,5 @@ const declareMurderer = function() {
 changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
+
+// OUTCOME 
