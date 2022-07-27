@@ -44,8 +44,8 @@ console.log(verdict);
 let murderer = 'Professor Plum';
 
 const declareMurderer = function() {
-  let murderer = 'Mrs. Peacock';
-  return `The murderer is ${murderer}.`;
+    let murderer = 'Mrs. Peacock';
+    return `The murderer is ${murderer}.`;
 }
 
 const firstVerdict = declareMurderer();
@@ -56,7 +56,7 @@ console.log('Second Verdict: ', secondVerdict);
 
 // First Verdict: The murder is Mrs. Peacock
 // Second Verdict: The murder is Professor Plum
-// First - the murder was changed by the variable within the function block
+// First - the murderer was changed by the variable within the function block
 // Second - the initial murderer variable stays as Prof Plum as the it is not effected by the declareMurder function
 
 // //////////////////////////////////////
