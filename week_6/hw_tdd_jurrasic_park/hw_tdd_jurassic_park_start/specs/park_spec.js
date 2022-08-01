@@ -25,9 +25,9 @@ describe('Park', function() {
     assert.strictEqual(actual, 15)
   });
 
-  xit('should have a collection of dinosaurs', function(){
+  it('should have a collection of dinosaurs', function(){
     const actual = park.dinosaurs
-    assert.strictEqual(actual, [])
+    assert.deepEqual(actual, [])
   });
 
   it('should be able to add a dinosaur to its collection', function(){
@@ -42,31 +42,32 @@ describe('Park', function() {
     park.addNew(barney);
     park.addNew(rex);
     park.addNew(yoshi);
+    park.remove(barney);
     const actual = park.dinosaurs
-    park.remove();
-    assert.strictEqual(actual.length, 2)
+    assert.deepEqual(actual, [rex, yoshi])
   });
 
-  xit('should be able to find the dinosaur that attracts the most visitors', function(){
+  it('should be able to find the dinosaur that attracts the most visitors', function(){
     park.addNew(barney);
     park.addNew(rex);
     park.addNew(yoshi);
-    const actual = park.mostPopular();
+    const actual = park.findMostAttractiveDinosaur();
     assert.strictEqual(actual, yoshi)
   });
 
-  it('should be able to find all dinosaurs of a particular species', function(){
+  xit('should be able to find all dinosaurs of a particular species', function(){
     park.addNew(barney);
+    park.addNew(rex);
     park.addNew(yoshi);
     chosenSpecies = 'diplodocus'
     const expected = park.findSpecies();
     assert.equal(expected.length, 1)
   });
 
-  it('should be able to calculate the total number of visitors per day');
+  xit('should be able to calculate the total number of visitors per day');
 
-  it('should be able to calculate the total number of visitors per year');
+  xit('should be able to calculate the total number of visitors per year');
 
-  it('should be able to calculate total revenue for one year');
+  xit('should be able to calculate total revenue for one year');
 
 });
